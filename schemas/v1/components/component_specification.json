@@ -4,13 +4,13 @@
   "properties": {
     "kind": {
       "type": "string",
-      "pattern": "^(outputport|workload|storage|observability)$"
+      "pattern": "(?i)^(outputport|workload|storage|observability)$"
     },
     "outputport": {
-      "$ref": "outputport_specification.json"
+      "$ref": "file:components/outputport/outputport_specification.json"
     },
     "workload": {
-      "$ref": "workload_specification.json"
+      "$ref": "file:components/workloads/workload_specification.json"
     },
     "storage": {
       "$ref": "storage_specification.json"

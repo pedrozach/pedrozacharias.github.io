@@ -8,6 +8,7 @@ jsonschema = "4.21.1"
 pyyaml = "*"
 
 [dev-packages]
+pytest = "*"
 
 [requires]
 python_version = "3.11"

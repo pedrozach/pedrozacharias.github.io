@@ -1,0 +1,9 @@
+clusterIdentifier: my-cluster
+database: my-database
+schema: public
+tables:
+  - table1
+  - table2
+endpoint: redshift.amazonaws.com
+port: 5439
+authType: iam

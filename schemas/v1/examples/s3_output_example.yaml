@@ -1,0 +1,11 @@
+bucketName: my-bucket
+region: us-west-2
+accessKey: AKIA...
+secretKey: secret...
+path: data/
+partitions:
+  - year
+  - month
+  - day
+fileFormat: parquet
+encryption: AES256
