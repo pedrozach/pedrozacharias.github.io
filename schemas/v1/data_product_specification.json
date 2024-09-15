@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^urn:dmb:dp:[a-zA-Z0-9_-]+:[0-9]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "fullyQualifiedName": {
+      "type": ["string", "null"]
+    },
+    "description": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "pattern": "^(dataproduct)$"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\..+$"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "dataProductOwner": {
+      "type": "string"
+    },
+    "dataProductOwnerDisplayName": {
+      "type": "string"
+    },
+    "devGroup": {
+      "type": "string"
+    },
+    "ownerGroup": {
+      "type": "string"
+    },
+    "email": {
+      "type": ["string", "null"]
+    },
+    "informationSLA": {
+      "type": ["string", "null"]
+    },
+    "status": {
+      "type": ["string", "null"],
+      "pattern": "^(draft|published|retired)$"
+    },
+    "maturity": {
+      "type": ["string", "null"],
+      "pattern": "^(tactical|strategic)$"
+    },
+    "billing": {
+      "type": ["object", "null"]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/OM_Tag"
+      }
+    },
+    "specific": {
+      "type": "object"
+    },
+    "components": {
+        "type": "array",
+        "items": {
+          "$ref": "file:///Users/pedrozacharias/git/pedrozacharias.github.io/schemas/v1/component.json"
+        },
+        "minItems": 1
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "description",
+    "kind",
+    "domain",
+    "version",
+    "environment",
+    "dataProductOwner",
+    "dataProductOwnerDisplayName",
+    "devGroup",
+    "ownerGroup",
+    "tags",
+    "components"
+  ]
+}

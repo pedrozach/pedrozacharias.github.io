@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "pattern": "^(outputport|workload|storage|observability)$"
+    },
+    "outputport": {
+      "$ref": "outputport_specification.json"
+    },
+    "workload": {
+      "$ref": "workload_specification.json"
+    },
+    "storage": {
+      "$ref": "storage_specification.json"
+    },
+    "observability": {
+      "$ref": "observability_specification.json"
+    }
+  },
+  "required": ["kind"]
+}

@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^urn:dmb:cmp:[a-zA-Z0-9_-]+:[0-9]+:[a-zA-Z0-9_-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "fullyQualifiedName": {
+      "type": ["string", "null"]
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\..+$"
+    },
+    "infrastructureTemplateId": {
+      "type": "string"
+    },
+    "useCaseTemplateId": {
+      "type": ["string", "null"]
+    },
+    "dependsOn": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^urn:dmb:cmp:[a-zA-Z0-9_-]+:[0-9]+:[a-zA-Z0-9_-]+$"
+      }
+    },
+    "platform": {
+      "type": ["string", "null"]
+    },
+    "technology": {
+      "type": ["string", "null"]
+    },
+    "outputPortType": {
+      "type": "string"
+    },
+    "creationDate": {
+      "type": ["string", "null"]
+    },
+    "startDate": {
+      "type": ["string", "null"]
+    },
+    "retentionTime": {
+      "type": ["string", "null"]
+    },
+    "processDescription": {
+      "type": ["string", "null"]
+    },
+    "dataContract": {
+      "$ref": "data_contract_specification.json"
+    },
+    "dataSharingAgreement": {
+      "$ref": "data_sharing_agreement_specification.json"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "tag_specification.json"
+      }
+    },
+    "sampleData": {
+      "$ref": "table_data_specification.json"
+    },
+    "semanticLinking": {
+      "type": ["object", "null"]
+    },
+    "specific": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "description",
+    "version",
+    "infrastructureTemplateId",
+    "dependsOn",
+    "outputPortType",
+    "dataContract",
+    "dataSharingAgreement",
+    "tags"
+  ]
+}
