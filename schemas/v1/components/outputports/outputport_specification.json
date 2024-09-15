@@ -72,7 +72,12 @@
       "type": ["object", "null"]
     },
     "specific": {
-      "type": "object"
+      "oneOf": [
+        { "$ref": "redshift.json" },
+        { "$ref": "trino.json" },
+        { "$ref": "s3.json" },
+        { "type": "null" }
+      ]
     }
   },
   "required": [

@@ -1,0 +1,8 @@
+catalog: my-catalog
+schema: public
+tables:
+  - table1
+  - table2
+endpoint: trino.example.com
+port: 8080
+authType: kerberos

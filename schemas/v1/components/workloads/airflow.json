@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Airflow",
+    "type": "object",
+    "required": ["dagId", "schedule", "defaultArgs", "tasks"],
+    "properties": {
+      "dagId": { "type": "string" },
+      "schedule": { "type": "string" },
+      "defaultArgs": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "tasks": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            { "$ref": "spark.json" },
+            { "$ref": "awsbatch.json" }
+          ]
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+  

@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "bucketName": {
+        "type": "string"
+      },
+      "region": {
+        "type": "string"
+      },
+      "accessKey": {
+        "type": "string"
+      },
+      "secretKey": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string"
+      },
+      "partitions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "fileFormat": {
+        "type": "string",
+        "pattern": "(?i)^(parquet|csv|json)$"
+      },
+      "encryption": {
+        "type": "string",
+        "pattern": "(?i)^(none|AES256|aws:kms)$"
+      }
+    },
+    "required": [
+      "bucketName",
+      "region",
+      "accessKey",
+      "secretKey",
+      "path",
+      "fileFormat",
+      "encryption"
+    ]
+  }

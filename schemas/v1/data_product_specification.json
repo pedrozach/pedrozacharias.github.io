@@ -4,7 +4,7 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^urn:dmb:dp:[a-zA-Z0-9_-]+:[0-9]+$"
+      "pattern": "^urn:dmb:dp:[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+:[0-9]+$"
     },
     "name": {
       "type": "string"
@@ -49,11 +49,11 @@
     },
     "status": {
       "type": ["string", "null"],
-      "pattern": "^(draft|published|retired)$"
+      "pattern": "(?i)^(draft|published|retired)$"
     },
     "maturity": {
       "type": ["string", "null"],
-      "pattern": "^(tactical|strategic)$"
+      "pattern": "(?i)^(tactical|strategic)$"
     },
     "billing": {
       "type": ["object", "null"]
@@ -70,7 +70,7 @@
     "components": {
         "type": "array",
         "items": {
-          "$ref": "file:///Users/pedrozacharias/git/pedrozacharias.github.io/schemas/v1/component.json"
+          "$ref": "file:schemas/v1/components/component_specification.json"
         },
         "minItems": 1
     }

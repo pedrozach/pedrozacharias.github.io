@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Workload",
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "description",
+      "version",
+      "infrastructureTemplateId",
+      "dependsOn",
+      "tags",
+      "readsFrom"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^urn:dmb:cmp:[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+:\\d+:[a-zA-Z0-9_-]+$"
+      },
+      "name": { "type": "string" },
+      "fullyQualifiedName": { "type": ["string", "null"] },
+      "description": { "type": "string" },
+      "version": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      },
+      "infrastructureTemplateId": { "type": "string" },
+      "useCaseTemplateId": { "type": ["string", "null"] },
+      "dependsOn": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^urn:dmb:cmp:[a-zA-Z0-9_-]+:[a-zA-Z0-9_-]+:\\d+:[a-zA-Z0-9_-]+$"
+        }
+      },
+      "platform": { "type": ["string", "null"] },
+      "technology": { "type": ["string", "null"] },
+      "workloadType": { "type": ["string", "null"] },
+      "connectionType": {
+        "type": ["string", "null"],
+        "pattern": "(?i)^(housekeeping|datapipeline)$"
+      },
+      "tags": {
+        "type": "array",
+        "items": { "$ref": "om_tag.json" }
+      },
+      "readsFrom": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "specific": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "airflow": { "$ref": "file:airflow.json" }
+            },
+            "required": ["airflow"],
+            "additionalProperties": false
+          },
+          { "type": "null" }
+        ]
+      }
+    },
+    "additionalProperties": true
+  }
+  
