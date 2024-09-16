@@ -6,13 +6,8 @@
         "type": "string"
       },
       "region": {
-        "type": "string"
-      },
-      "accessKey": {
-        "type": "string"
-      },
-      "secretKey": {
-        "type": "string"
+        "type": "string",
+        "default": "eu-west-1"
       },
       "path": {
         "type": "string"
@@ -26,19 +21,11 @@
       "fileFormat": {
         "type": "string",
         "pattern": "(?i)^(parquet|csv|json)$"
-      },
-      "encryption": {
-        "type": "string",
-        "pattern": "(?i)^(none|AES256|aws:kms)$"
       }
     },
     "required": [
       "bucketName",
-      "region",
-      "accessKey",
-      "secretKey",
       "path",
-      "fileFormat",
-      "encryption"
+      "fileFormat"
     ]
   }

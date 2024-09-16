@@ -15,9 +15,9 @@ def load_yaml_data(data_path):
 
 # Test cases for each schema
 @pytest.mark.parametrize("schema_path, data_path", [
-    ("schemas/v1/components/outputports/redshift_output_specification.json", "schemas/v1/examples/redshift_output_example.yaml"),
-    ("schemas/v1/components/outputports/trino_output_specification.json", "schemas/v1/examples/trino_output_example.yaml"),
-    ("schemas/v1/components/outputports/s3_output_specification.json", "schemas/v1/examples/s3_output_example.yaml"),
+    ("schemas/v1/components/outputports/redshift.json", "schemas/v1/examples/redshift_output_example.yaml"),
+    ("schemas/v1/components/outputports/trino.json", "schemas/v1/examples/trino_output_example.yaml"),
+    ("schemas/v1/components/outputports/s3.json", "schemas/v1/examples/s3_output_example.yaml"),
     ("schemas/v1/data_product_specification.json", "example.yaml")
 ])
 def test_schema_validation(schema_path, data_path):
