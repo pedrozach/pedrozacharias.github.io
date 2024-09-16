@@ -5,4 +5,3 @@ tables:
   - table2
 endpoint: trino.example.com
 port: 8080
-authType: kerberos

@@ -6,4 +6,3 @@ tables:
   - table2
 endpoint: redshift.amazonaws.com
 port: 5439
-authType: iam

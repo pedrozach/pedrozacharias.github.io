@@ -2,7 +2,10 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "catalog": {
+      "clusterIdentifier": {
+        "type": "string"
+      },
+      "database": {
         "type": "string"
       },
       "schema": {
@@ -18,19 +21,16 @@
         "type": "string"
       },
       "port": {
-        "type": "integer"
-      },
-      "authType": {
-        "type": "string",
-        "pattern": "(?i)^(kerberos|ldap|none)$"
+        "type": "integer",
+        "default": "0001"
       }
     },
     "required": [
-      "catalog",
+      "clusterIdentifier",
+      "database",
       "schema",
       "tables",
       "endpoint",
-      "port",
-      "authType"
+      "port"
     ]
   }

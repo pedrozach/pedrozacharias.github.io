@@ -2,10 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "clusterIdentifier": {
-        "type": "string"
-      },
-      "database": {
+      "catalog": {
         "type": "string"
       },
       "schema": {
@@ -22,19 +19,13 @@
       },
       "port": {
         "type": "integer"
-      },
-      "authType": {
-        "type": "string",
-        "pattern": "(?i)^(iam|userpassword|none)$"
       }
     },
     "required": [
-      "clusterIdentifier",
-      "database",
+      "catalog",
       "schema",
       "tables",
       "endpoint",
-      "port",
-      "authType"
+      "port"
     ]
   }
